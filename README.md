@@ -1,3 +1,2 @@
-# Y-Board Buttons and Switches Lab
-
-Click the green "Code" button and Download the ZIP file. Extract the file (either through the terminal window or the files app) and open the folder in VS Code.
+This is the repository for our project. If this doesn't work manually add a file with your game and save it and I will combine them seperately.
+-Packer
