@@ -49,10 +49,10 @@ void game_3()
 
 void game_4()
 {
+  char exp = 1;
   char rot = 0;
   while (1)
   {
-    char exp = 1;
 
     switch (exp)
     {
