@@ -53,7 +53,9 @@ void game_4()
   char rot = 0;
   int p_1 = 0;
   int p_2 = 0;
-  while (1)
+  int count = 0;
+  // Write a buzzer count down for the code
+  while (count < 100000)
   {
 
     switch (exp)
@@ -216,13 +218,18 @@ void game_4()
         exp = 20;
       }
     }
-    if (Yboard.get_button(1) == 0)
+    if ((Yboard.get_button(1) == 0) || (Yboard.get_button(2) == 0))
     {
-      rot = 0;
+      if (rot = 0)
+      {
+        rot = 1;
+      }
+      else
+      {
+        rot = 0;
+      }
     }
-    if (Yboard.get_button(2) == 0)
-    {
-      rot = 1;
-    }
+    count++;
   }
+  // This section below this line displays the score and provides an oppurtunity to restart the game.
 }
