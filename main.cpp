@@ -49,129 +49,131 @@ void game_3()
 
 void game_4()
 {
-  char rot = 0 while (true)
+  char rot = 0;
+  while (1)
   {
+    char exp = 1;
 
-    switch (expression)
+    switch (exp)
     {
     case 1:
       Yboard.set_led_color(1, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(1, 0, 0, 0);
+      Yboard.set_led_color(1, 0, 0, 0);
       break;
 
     case 2:
       Yboard.set_led_color(2, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(2, 0, 0, 0);
+      Yboard.set_led_color(2, 0, 0, 0);
       break;
 
     case 3:
       Yboard.set_led_color(3, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(3, 0, 0, 0);
+      Yboard.set_led_color(3, 0, 0, 0);
       break;
 
     case 4:
       Yboard.set_led_color(4, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(4, 0, 0, 0);
+      Yboard.set_led_color(4, 0, 0, 0);
       break;
 
     case 5:
       Yboard.set_led_color(5, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(5, 0, 0, 0);
+      Yboard.set_led_color(5, 0, 0, 0);
       break;
 
     case 6:
       Yboard.set_led_color(6, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(6, 0, 0, 0);
+      Yboard.set_led_color(6, 0, 0, 0);
       break;
 
     case 7:
       Yboard.set_led_color(7, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(7, 0, 0, 0);
+      Yboard.set_led_color(7, 0, 0, 0);
       break;
 
     case 8:
       Yboard.set_led_color(8, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(8, 0, 0, 0);
+      Yboard.set_led_color(8, 0, 0, 0);
       break;
 
     case 9:
       Yboard.set_led_color(9, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(9, 0, 0, 0);
+      Yboard.set_led_color(9, 0, 0, 0);
       break;
 
     case 10:
       Yboard.set_led_color(10, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(10, 0, 0, 0);
+      Yboard.set_led_color(10, 0, 0, 0);
       break;
 
     case 11:
       Yboard.set_led_color(11, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(11, 0, 0, 0);
+      Yboard.set_led_color(11, 0, 0, 0);
       break;
 
     case 12:
       Yboard.set_led_color(12, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(12, 0, 0, 0);
+      Yboard.set_led_color(12, 0, 0, 0);
       break;
 
     case 13:
       Yboard.set_led_color(13, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(13, 0, 0, 0);
+      Yboard.set_led_color(13, 0, 0, 0);
       break;
 
     case 14:
       Yboard.set_led_color(14, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(14, 0, 0, 0);
+      Yboard.set_led_color(14, 0, 0, 0);
       break;
 
     case 15:
       Yboard.set_led_color(15, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(15, 0, 0, 0);
+      Yboard.set_led_color(15, 0, 0, 0);
       break;
 
     case 16:
       Yboard.set_led_color(16, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(16, 0, 0, 0);
+      Yboard.set_led_color(16, 0, 0, 0);
       break;
 
     case 17:
       Yboard.set_led_color(17, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(17, 0, 0, 0);
+      Yboard.set_led_color(17, 0, 0, 0);
       break;
 
     case 18:
       Yboard.set_led_color(18, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(18, 0, 0, 0);
+      Yboard.set_led_color(18, 0, 0, 0);
       break;
 
     case 19:
       Yboard.set_led_color(19, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(19, 0, 0, 0);
+      Yboard.set_led_color(19, 0, 0, 0);
       break;
 
     case 20:
       Yboard.set_led_color(20, 255, 255, 255);
       delay(10);
-      yboard.set_led_color(20, 0, 0, 0);
+      Yboard.set_led_color(20, 0, 0, 0);
       break;
 
     default:
@@ -179,10 +181,19 @@ void game_4()
     }
     if (rot == 0)
     {
-      case++
+      exp++;
+      if (exp > 20)
+      {
+        exp = 1;
+      }
     }
-    else{
-      case--
+    else
+    {
+      exp--;
+      if (exp < 1)
+      {
+        exp = 20;
+      }
     }
   }
 }
