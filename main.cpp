@@ -8,26 +8,29 @@ void game_4();
 int main()
 {
   // Code for main game controls
-  if (Yboard.get_switch(1) == 0)
+  while (1)
   {
-    if (Yboard.get_switch(2) == 0)
+    if (Yboard.get_switch(1) == 0)
     {
-      game_1();
+      if (Yboard.get_switch(2) == 0)
+      {
+        game_1();
+      }
+      else
+      {
+        game_2();
+      }
     }
     else
     {
-      game_2();
-    }
-  }
-  else
-  {
-    if (Yboard.get_switch(2) == 0)
-    {
-      game_3();
-    }
-    else
-    {
-      game_4();
+      if (Yboard.get_switch(2) == 0)
+      {
+        game_3();
+      }
+      else
+      {
+        game_4();
+      }
     }
   }
 }
@@ -54,6 +57,7 @@ void game_4()
   int p_1 = 0;
   int p_2 = 0;
   int count = 0;
+  int x = 0;
   // Write a buzzer count down for the code
   while (count < 100000)
   {
@@ -63,7 +67,7 @@ void game_4()
     case 1:
       Yboard.set_led_color(1, 255, 255, 255);
       delay(50);
-      Yboard.set_led_color(1, 0, 0, 0);
+      Yboard.set_led_color(1, 0, x, 0);
       p_2++;
       break;
 
@@ -106,28 +110,28 @@ void game_4()
       Yboard.set_led_color(7, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(7, 0, 0, 0);
-      p_2++;
+      p_1++;
       break;
 
     case 8:
       Yboard.set_led_color(8, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(8, 0, 0, 0);
-      p_2++;
+      p_1++;
       break;
 
     case 9:
       Yboard.set_led_color(9, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(9, 0, 0, 0);
-      p_2++;
+      p_1++;
       break;
 
     case 10:
       Yboard.set_led_color(10, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(10, 0, 0, 0);
-      p_2++;
+      p_1++;
       break;
 
     case 11:
@@ -176,27 +180,28 @@ void game_4()
       Yboard.set_led_color(17, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(17, 0, 0, 0);
+      p_2++;
       break;
 
     case 18:
       Yboard.set_led_color(18, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(18, 0, 0, 0);
-      p_1++;
+      p_2++;
       break;
 
     case 19:
       Yboard.set_led_color(19, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(19, 0, 0, 0);
-      p_1++;
+      p_2++;
       break;
 
     case 20:
       Yboard.set_led_color(20, 255, 255, 255);
       delay(50);
       Yboard.set_led_color(20, 0, 0, 0);
-      p_1++;
+      p_2++;
       break;
 
     default:
@@ -232,4 +237,92 @@ void game_4()
     count++;
   }
   // This section below this line displays the score and provides an oppurtunity to restart the game.
+  Yboard.set_all_leds_color(0, 255, 0);
+  if (p_1 >= 500)
+  {
+    Yboard.set_led_color(6, 255, 0, 0);
+  }
+  if (p_1 >= 1000)
+  {
+    Yboard.set_led_color(7, 255, 0, 0);
+  }
+  if (p_1 >= 1500)
+  {
+    Yboard.set_led_color(8, 255, 0, 0);
+  }
+  if (p_1 >= 2000)
+  {
+    Yboard.set_led_color(9, 255, 0, 0);
+  }
+  if (p_1 >= 2500)
+  {
+    Yboard.set_led_color(10, 255, 0, 0);
+  }
+  if (p_1 >= 3000)
+  {
+    Yboard.set_led_color(11, 255, 0, 0);
+  }
+  if (p_1 >= 3500)
+  {
+    Yboard.set_led_color(12, 255, 0, 0);
+  }
+  if (p_1 >= 4000)
+  {
+    Yboard.set_led_color(13, 255, 0, 0);
+  }
+  if (p_1 >= 4500)
+  {
+    Yboard.set_led_color(14, 255, 0, 0);
+  }
+  if (p_1 >= 5000)
+  {
+    Yboard.set_led_color(15, 255, 0, 0);
+  }
+  if (p_1 >= 5500)
+  {
+    Yboard.set_led_color(16, 255, 0, 0);
+  }
+  if (p_1 >= 6000)
+  {
+    Yboard.set_led_color(17, 255, 0, 0);
+  }
+  if (p_1 >= 6500)
+  {
+    Yboard.set_led_color(18, 255, 0, 0);
+  }
+  if (p_1 >= 7000)
+  {
+    Yboard.set_led_color(19, 255, 0, 0);
+  }
+  if (p_1 >= 7500)
+  {
+    Yboard.set_led_color(20, 255, 0, 0);
+  }
+  if (p_1 >= 8000)
+  {
+    Yboard.set_led_color(1, 255, 0, 0);
+  }
+  if (p_1 >= 8500)
+  {
+    Yboard.set_led_color(2, 255, 0, 0);
+  }
+  if (p_1 >= 9000)
+  {
+    Yboard.set_led_color(3, 255, 0, 0);
+  }
+  if (p_1 >= 9500)
+  {
+    Yboard.set_led_color(4, 255, 0, 0);
+  }
+  if (p_1 >= 10000)
+  {
+    Yboard.set_led_color(5, 255, 0, 0);
+  }
+  while (1)
+  {
+    if ((Yboard.get_button(1) == 0) || (Yboard.get_button(2) == 0))
+    {
+      game_4();
+    }
+  }
 }
