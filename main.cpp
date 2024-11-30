@@ -52,277 +52,149 @@ void game_3()
 
 void game_4()
 {
-  char exp = 1;
+  char exp = 7;
   char rot = 0;
   int p_1 = 0;
   int p_2 = 0;
   int count = 0;
   int x = 0;
+  int timer = 0;
   // Write a buzzer count down for the code
-  while (count < 100000)
+  while (timer < 1000)
   {
-
-    switch (exp)
+    if (Yboard.get_button(1) == 0 && Yboard.get_button(2) == 0)
     {
-    case 1:
-      Yboard.set_led_color(1, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(1, 0, x, 0);
-      p_2++;
-      break;
-
-    case 2:
-      Yboard.set_led_color(2, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(2, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 3:
-      Yboard.set_led_color(3, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(3, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 4:
-      Yboard.set_led_color(4, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(4, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 5:
-      Yboard.set_led_color(5, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(5, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 6:
-      Yboard.set_led_color(6, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(6, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 7:
-      Yboard.set_led_color(7, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(7, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 8:
-      Yboard.set_led_color(8, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(8, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 9:
-      Yboard.set_led_color(9, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(9, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 10:
-      Yboard.set_led_color(10, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(10, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 11:
-      Yboard.set_led_color(11, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(11, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 12:
-      Yboard.set_led_color(12, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(12, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 13:
-      Yboard.set_led_color(13, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(13, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 14:
-      Yboard.set_led_color(14, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(14, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 15:
-      Yboard.set_led_color(15, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(15, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 16:
-      Yboard.set_led_color(16, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(16, 0, 0, 0);
-      p_1++;
-      break;
-
-    case 17:
-      Yboard.set_led_color(17, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(17, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 18:
-      Yboard.set_led_color(18, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(18, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 19:
-      Yboard.set_led_color(19, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(19, 0, 0, 0);
-      p_2++;
-      break;
-
-    case 20:
-      Yboard.set_led_color(20, 255, 255, 255);
-      delay(50);
-      Yboard.set_led_color(20, 0, 0, 0);
-      p_2++;
-      break;
-
-    default:
-      break;
-    }
-    if (rot == 0)
-    {
-      exp++;
-      if (exp > 20)
+      timer++;
+      x++;
+      if (x > 20)
       {
-        exp = 1;
+        x = 1;
       }
+      Yboard.set_all_leds_color(0, 0, 0);
+      Yboard.set_led_color(x, 250, 0, 0);
+    }
+    else if (((Yboard.get_button(1) == 1) && (Yboard.get_button(2) == 0)) || ((Yboard.get_button(2) == 1) && (Yboard.get_button(1) == 0)))
+    {
+      timer++;
+      x--;
+      if (x < 1)
+      {
+        x = 20;
+      }
+      Yboard.set_all_leds_color(0, 0, 0);
+      Yboard.set_led_color(x, 0, 250, 0);
+    }
+    else if ((Yboard.get_button(1) == 1) && (Yboard.get_button(2) == 1))
+    {
+      timer++;
+      x++;
+      if (x > 20)
+      {
+        x = 1;
+      }
+      Yboard.set_all_leds_color(0, 0, 0);
+      Yboard.set_led_color(x, 250, 0, 0);
+    }
+    if (x > 6 && x < 17)
+    {
+      p_1++;
     }
     else
     {
-      exp--;
-      if (exp < 1)
-      {
-        exp = 20;
-      }
+      p_2++;
     }
-    if ((Yboard.get_button(1) == 0) || (Yboard.get_button(2) == 0))
+    // Scoring and Disengagement
+    Yboard.set_all_leds_color(0, 255, 0);
+    if (p_1 >= 50)
     {
-      if (rot = 0)
-      {
-        rot = 1;
-      }
-      else
-      {
-        rot = 0;
-      }
+      Yboard.set_led_color(7, 255, 0, 0);
     }
-    count++;
-  }
-  // This section below this line displays the score and provides an oppurtunity to restart the game.
-  Yboard.set_all_leds_color(0, 255, 0);
-  if (p_1 >= 500)
-  {
-    Yboard.set_led_color(6, 255, 0, 0);
-  }
-  if (p_1 >= 1000)
-  {
-    Yboard.set_led_color(7, 255, 0, 0);
-  }
-  if (p_1 >= 1500)
-  {
-    Yboard.set_led_color(8, 255, 0, 0);
-  }
-  if (p_1 >= 2000)
-  {
-    Yboard.set_led_color(9, 255, 0, 0);
-  }
-  if (p_1 >= 2500)
-  {
-    Yboard.set_led_color(10, 255, 0, 0);
-  }
-  if (p_1 >= 3000)
-  {
-    Yboard.set_led_color(11, 255, 0, 0);
-  }
-  if (p_1 >= 3500)
-  {
-    Yboard.set_led_color(12, 255, 0, 0);
-  }
-  if (p_1 >= 4000)
-  {
-    Yboard.set_led_color(13, 255, 0, 0);
-  }
-  if (p_1 >= 4500)
-  {
-    Yboard.set_led_color(14, 255, 0, 0);
-  }
-  if (p_1 >= 5000)
-  {
-    Yboard.set_led_color(15, 255, 0, 0);
-  }
-  if (p_1 >= 5500)
-  {
-    Yboard.set_led_color(16, 255, 0, 0);
-  }
-  if (p_1 >= 6000)
-  {
-    Yboard.set_led_color(17, 255, 0, 0);
-  }
-  if (p_1 >= 6500)
-  {
-    Yboard.set_led_color(18, 255, 0, 0);
-  }
-  if (p_1 >= 7000)
-  {
-    Yboard.set_led_color(19, 255, 0, 0);
-  }
-  if (p_1 >= 7500)
-  {
-    Yboard.set_led_color(20, 255, 0, 0);
-  }
-  if (p_1 >= 8000)
-  {
-    Yboard.set_led_color(1, 255, 0, 0);
-  }
-  if (p_1 >= 8500)
-  {
-    Yboard.set_led_color(2, 255, 0, 0);
-  }
-  if (p_1 >= 9000)
-  {
-    Yboard.set_led_color(3, 255, 0, 0);
-  }
-  if (p_1 >= 9500)
-  {
-    Yboard.set_led_color(4, 255, 0, 0);
-  }
-  if (p_1 >= 10000)
-  {
-    Yboard.set_led_color(5, 255, 0, 0);
-  }
-  while (1)
-  {
-    if ((Yboard.get_button(1) == 0) || (Yboard.get_button(2) == 0))
+    if (p_1 >= 100)
     {
-      game_4();
+      Yboard.set_led_color(8, 255, 0, 0);
+    }
+    if (p_1 >= 150)
+    {
+      Yboard.set_led_color(9, 255, 0, 0);
+    }
+    if (p_1 >= 200)
+    {
+      Yboard.set_led_color(10, 255, 0, 0);
+    }
+    if (p_1 >= 250)
+    {
+      Yboard.set_led_color(11, 255, 0, 0);
+    }
+    if (p_1 >= 300)
+    {
+      Yboard.set_led_color(12, 255, 0, 0);
+    }
+    if (p_1 >= 350)
+    {
+      Yboard.set_led_color(13, 255, 0, 0);
+    }
+    if (p_1 >= 400)
+    {
+      Yboard.set_led_color(14, 255, 0, 0);
+    }
+    if (p_1 >= 450)
+    {
+      Yboard.set_led_color(15, 255, 0, 0);
+    }
+    if (p_1 >= 500)
+    {
+      Yboard.set_led_color(16, 255, 0, 0);
+    }
+    if (p_1 >= 550)
+    {
+      Yboard.set_led_color(17, 255, 0, 0);
+    }
+    if (p_1 >= 600)
+    {
+      Yboard.set_led_color(18, 255, 0, 0);
+    }
+    if (p_1 >= 650)
+    {
+      Yboard.set_led_color(19, 255, 0, 0);
+    }
+    if (p_1 >= 700)
+    {
+      Yboard.set_led_color(20, 255, 0, 0);
+    }
+    if (p_1 >= 750)
+    {
+      Yboard.set_led_color(1, 255, 0, 0);
+    }
+    if (p_1 >= 800)
+    {
+      Yboard.set_led_color(2, 255, 0, 0);
+    }
+    if (p_1 >= 850)
+    {
+      Yboard.set_led_color(3, 255, 0, 0);
+    }
+    if (p_1 >= 900)
+    {
+      Yboard.set_led_color(4, 255, 0, 0);
+    }
+    if (p_1 >= 950)
+    {
+      Yboard.set_led_color(5, 255, 0, 0);
+    }
+    if (p_1 >= 1000)
+    {
+      Yboard.set_led_color(6, 255, 0, 0);
+    }
+    while (1)
+    {
+      if (Yboard.get_button(1) == 1)
+      {
+        game_4();
+      }
+      else if (Yboard.get_button(2) == 1)
+      {
+        Yboard.set_all_leds_color(0, 0, 0);
+        main();
+      }
     }
   }
-}
