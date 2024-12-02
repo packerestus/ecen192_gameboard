@@ -70,7 +70,7 @@ void game_3() {
     }
   }
 
-  set_all_leds_color(256, 256, 256);
+  Yboard.set_all_leds_color(256, 256, 256);
   // Play again?
   while (1) {
     if (Yboard.get_button(1) == 1) {
