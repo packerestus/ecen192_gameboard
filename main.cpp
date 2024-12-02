@@ -74,7 +74,7 @@ void game_3() {
   // Play again?
   while (1) {
     if (Yboard.get_button(1) == 1) {
-      game_4();
+      game_3();
     } else if (Yboard.get_button(2) == 1) {
       Yboard.set_all_leds_color(0, 0, 0);
       main();
