@@ -1,4 +1,6 @@
 #include "yboard.h"
+#include <time.h>
+#include <stdlib.h>
 
 void game_1();
 void game_2();
@@ -45,9 +47,39 @@ void game_2()
   // Add your code here for Part 2
 }
 
-void game_3()
-{
-  // Add your code here for Part 3
+void game_3() {
+  Yboard.set_led_brightness(50);
+  Yboard.set_led_color(1, 0, 0, 256);
+  Yboard.set_led_color(13, 256, 0, 0);
+  delay(250);
+  Yboard.set_all_leds_color(0, 0, 0);
+  // Set random timer (at least 2 seconds with variation of 2 seconds)
+  srand(time(NULL));
+  int timer = rand() % 2000 + 2000;
+  delay(timer);
+  // Set color to winner
+  while (1) {
+    if (Yboard.get_button(1) == 0) {
+      Yboard.set_all_leds_color(0, 0, 256);
+      delay(2000);
+      break;
+    } else if (Yboard.get_button(2) == 0) {
+      delay(2000);
+      Yboard.set_all_leds_color(256, 0, 0);
+      break;
+    }
+  }
+
+  set_all_leds_color(256, 256, 256);
+  // Play again?
+  while (1) {
+    if (Yboard.get_button(1) == 1) {
+      game_4();
+    } else if (Yboard.get_button(2) == 1) {
+      Yboard.set_all_leds_color(0, 0, 0);
+      main();
+    }
+  }
 }
 
 void game_4()
@@ -198,3 +230,4 @@ void game_4()
       }
     }
   }
+}
